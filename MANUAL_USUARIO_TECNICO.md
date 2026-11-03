@@ -108,7 +108,7 @@ La base de datos es temporal: los registros se pierden al detener la aplicación
 ### 6.1 Tecnologías
 
 - Java 25.
-- Spring Boot 4.1.1.
+- Spring Boot 4.1.2.
 - Spring Web MVC para la API REST.
 - Spring Data JPA y Hibernate para persistencia.
 - H2 como base de datos en memoria.

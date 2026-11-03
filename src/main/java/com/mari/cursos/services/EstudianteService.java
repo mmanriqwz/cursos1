@@ -2,7 +2,6 @@ package com.mari.cursos.services;
 
 import com.mari.cursos.domain.models.Estudiante;
 import com.mari.cursos.repositories.EstudianteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -14,8 +13,11 @@ import java.util.Optional;
 @Service
 public class EstudianteService {
 
-    @Autowired
-    private EstudianteRepository estudianteRepository;
+    private final EstudianteRepository estudianteRepository;
+
+    public EstudianteService(EstudianteRepository estudianteRepository) {
+        this.estudianteRepository = estudianteRepository;
+    }
 
     /**
      * Obtiene la lista completa de todos los estudiantes registrados.
@@ -55,4 +57,3 @@ public class EstudianteService {
         estudianteRepository.deleteById(id);
     }
 }
-

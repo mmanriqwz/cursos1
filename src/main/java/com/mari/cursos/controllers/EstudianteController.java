@@ -2,7 +2,6 @@ package com.mari.cursos.controllers;
 
 import com.mari.cursos.domain.models.Estudiante;
 import com.mari.cursos.services.EstudianteService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -11,8 +10,11 @@ import java.util.List;
 @RequestMapping("/api/estudiantes")
 public class EstudianteController {
 
-    @Autowired
-    private EstudianteService estudianteService;
+    private final EstudianteService estudianteService;
+
+    public EstudianteController(EstudianteService estudianteService) {
+        this.estudianteService = estudianteService;
+    }
 
     @GetMapping
     public List<Estudiante> listar() {
